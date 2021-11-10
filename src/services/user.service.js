@@ -7,10 +7,10 @@ const getAccountDetails = (id) => {
   return axios.get(API_URL + "accounts/"+id, { headers: authHeader() });
 };
 
-const depositAmount = (amount) => {
+const depositAmount = (accNo,amount) => {
   const data = {
-    "senderAccNo": 1000,
-    "transactionAmount": 355
+    "senderAccNo": accNo,
+    "transactionAmount": amount
 }
   return axios.post(API_URL + "transaction/deposit", data, { headers: authHeader() });
 };
@@ -20,13 +20,17 @@ const getTransactionHistory = (id) => {
   return axios.get(API_URL + "transactions/"+ id, { headers: authHeader() });
 };
 
-const getAdminBoard = () => {
-  return axios.get(API_URL + "admin", { headers: authHeader() });
+const withdrawAmount = (accNo, amount) => {
+  const data = {
+    "senderAccNo": accNo,
+    "transactionAmount": amount
+}
+  return axios.get(API_URL + "transaction/withdraw", data, { headers: authHeader() });
 };
 
 export default {
   getAccountDetails,
   depositAmount,
   getTransactionHistory,
-  getAdminBoard,
+  withdrawAmount,
 };
