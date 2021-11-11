@@ -62,6 +62,17 @@ const Accounts = (props) =>{
         setDisabled(false);
       };
 
+      const handleWithdrawAmount = (e) => {
+        const deposit = e.target.value;
+        setAmount(deposit);
+        setDisabled(false);
+      }
+
+      const handleWithdrawSelect= (e) => {
+        e.preventDefault();
+        console.log("select withdraw stuff" + e.target.value);
+        setSelect(e.target.value);
+      }
     
     const handleSelect = (e) => {
         e.preventDefault();
@@ -162,7 +173,7 @@ const Accounts = (props) =>{
             <Modal.Body>
             <Form noValidate validated={validated} onSubmit={handleWithdrawSubmit}>
                                     <Form.Group className="mb-3" controlId="formSelect">
-                                    <Form.Select onChange={handleSelect} selected aria-label="Default select example">
+                                    <Form.Select onChange={handleWithdrawSelect} selected aria-label="Default select example">
                                     <option>Open this select menu</option>
                                         {selectValues}
                                     </Form.Select>
@@ -172,7 +183,7 @@ const Accounts = (props) =>{
                                         <Form.Label>Amount</Form.Label>
                                         <Form.Control type="number" 
                                         placeholder="Enter amount" 
-                                        onChange={handleAmount}
+                                        onChange={handleWithdrawAmount}
                                         required />
                                         <Form.Control.Feedback type="invalid">
                                             Please provide a valid Amount.

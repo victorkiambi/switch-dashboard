@@ -25,7 +25,7 @@ const withdrawAmount = (accNo, amount) => {
     "senderAccNo": accNo,
     "transactionAmount": amount
 }
-  return axios.get(API_URL + "transaction/withdraw", data, { headers: authHeader() });
+  return axios.post(API_URL + "transaction/withdraw", data, { headers: authHeader() });
 };
 
 export default {

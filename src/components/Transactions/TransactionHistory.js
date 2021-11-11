@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {Card, Table, Button, Container, Row, Col, Form} from "react-bootstrap"
 import userService from "../../services/user.service";
+import AccountTransfer from "../AccountTransfer/AccountTransfer";
 
 
 
@@ -47,7 +48,7 @@ const TransactionHistory = () =>{
         <Container>
             <Row>
                 <Col sm={8}>
-                    <Card style={{ margin: '10px' }}>
+                    <Card style={{ marginTop: '10px' }}>
                         <Card.Body>
                             <Card.Title>Transactions</Card.Title>         
                                 <Table striped bordered hover>
@@ -64,6 +65,8 @@ const TransactionHistory = () =>{
                                 </Table>
                             </Card.Body>
                         </Card>
+                    </Col>
+                    <Col>
                     </Col>
             </Row>
         </Container>

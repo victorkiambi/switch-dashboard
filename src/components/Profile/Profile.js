@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import AuthService from "../../services/auth.service";
 import userService from "../../services/user.service";
 import Accounts from "../Accounts/Accounts";
+import AccountTransfer from "../AccountTransfer/AccountTransfer";
 import TransactionHistory from "../Transactions/TransactionHistory";
 
 const Profile = () => {
